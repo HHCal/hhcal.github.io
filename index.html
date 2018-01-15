@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<title>Happy Hacking Calendar</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/atom-one-light.min.css">
+<link rel="stylesheet" href="css/prism.css">
+<script src="js/vue.js"></script>
+</head>
+<body>
+<div v-cloak id="page" class="page" v-on:mouseleave="updateCode()">
+    <h1><div contenteditable="true">{{lang}}</div></h1>
+    <div class="main-date">2018-01-01</div>
+    <div class="meta">
+    <span class="main-week">Mon</span>
+    <span class="main-lunar red">元旦</span>
+    </div>
+    <pre><code id="code" v-bind:class="langClass">{{code}}</code></pre>
+    <textarea id="codeBox" contenteditable="true">{{langName}}
+{{code}}</textarea>
+    <div class="description" contenteditable="true">{{desc}}</div>
+    <ul class="date">
+    <li>
+    <div class="week">Mon</div>
+    <div class="date">01-01</div>
+    <div class="lunar red">元旦</div>
+    </li>
+    <li>
+    <div class="week">Tue</div>
+    <div class="date">01-02</div>
+    <div class="lunar">十六</div>
+    </li>
+    <li>
+    <div class="week">Wed</div>
+    <div class="date">01-03</div>
+    <div class="lunar">十七</div>
+    </li>
+    <li>
+    <div class="week">Thu</div>
+    <div class="date">01-04</div>
+    <div class="lunar">十八</div>
+    </li>
+    <li>
+    <div class="week">Fri</div>
+    <div class="date">01-05</div>
+    <div class="lunar red">小寒</div>
+    </li>
+    <li>
+    <div class="week red">Sat</div>
+    <div class="date">01-06</div>
+    <div class="lunar">二十</div>
+    </li>
+    <li>
+    <div class="week red">Sun</div>
+    <div class="date">01-07</div>
+    <div class="lunar">廿一</div>
+    </li>
+    </ul>
+    <form enctype="application/json" id="form" action="https://hhcal.azurewebsites.net/api/hhcal" method="post" target="save">
+        <input type="hidden" name="lang" v-model="langName">
+        <input type="hidden" name="title" v-model="lang">
+        <textarea style="display:none" name="code" v-model="code"></textarea>
+        <input type="hidden" name="desc" v-model="desc">
+        <button type="submit">Share</button>
+    </form>
+</div>
+<iframe src="about:blank" id="save" name="save"></iframe>
+<script src="js/main.js"></script>
+<script>
+var prism = document.createElement('script');
+prism.src = 'js/prism.js';
+document.body.appendChild(prism);
+</script>
+</body>
+</html>
