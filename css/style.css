@@ -39,7 +39,7 @@ body {
     background: url(../images/black-paper.png) black;
     font-size: 8px;
     font-family: 'Space Mono', monospace, 'Noto Sans SC Sliced', Arial;
-    min-height: 600px;
+    min-height: 300px;
 }
 
 .page {
