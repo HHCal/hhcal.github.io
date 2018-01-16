@@ -11,7 +11,7 @@ tableService.queryEntities('hhcal', tableQuery, null, function(error, results) {
         var app = {
             el: '#page',
             data: {
-                lang: results.entries[0].title._.replace(/\+/g, ' '),
+                lang: decodeURIComponent(results.entries[0].title._.replace(/\+/g, ' ')),
                 langClass: {},
                 code: decodeURIComponent(results.entries[0].code._.replace(/\+/g, ' ')),
                 desc: decodeURIComponent(results.entries[0].desc._.replace(/\+/g, ' '))
