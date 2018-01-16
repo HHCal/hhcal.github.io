@@ -3,7 +3,7 @@ var tableUri = 'https://hhcal.table.core.windows.net';
 var token = '?sv=2017-04-17&ss=t&srt=sco&sp=ru&se=2038-01-15T23:56:06Z&st=2018-01-15T15:56:06Z&spr=https&sig=RSso2iiGMPIxpLUVBpKigeEiOUIjhxaUN89GzXVcyTM%3D';
 var tableService = AzureStorage.createTableServiceWithSas(tableUri, token);
 var tableQuery = new AzureStorage.TableQuery()
-                .where('PartitionKey eq ? and RowKey eq ?', id[0], id[1]);
+                .where('PartitionKey eq ? and RowKey eq ?', id[0], id[1].split(/=&/)[0]);
 tableService.queryEntities('hhcal', tableQuery, null, function(error, results) {
     if (error) {
         window.location.href = '/';
