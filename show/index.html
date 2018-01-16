@@ -65,6 +65,8 @@
 <script>
 function updateScale() {
     var height = document.body.clientHeight - 40;
+    var width = document.body.clientWidth - 20;
+    var scale = Math.min(height / 528, width / 400);
     var scale = height / 528;
     document.getElementById('page').style.transform = 'scale(' + scale + ')';
 }
