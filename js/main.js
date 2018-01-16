@@ -16,6 +16,9 @@ public class HackingDate {
     },
     methods: {
         updateCode: function() {
+            this.lang = document.getElementById('lang').innerText;
+            this.desc = document.getElementById('desc').innerText;
+
             var code = document.getElementById('codeBox').value;
 
             var newLine = code.indexOf('\n');

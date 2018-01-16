@@ -9,7 +9,7 @@
 </head>
 <body>
 <div v-cloak id="page" class="page" v-on:mouseleave="updateCode()">
-    <h1><div contenteditable="true">{{lang}}</div></h1>
+    <h1><div contenteditable="true" id="lang">{{lang}}</div></h1>
     <div class="main-date">2018-01-01</div>
     <div class="meta">
     <span class="main-week">Mon</span>
@@ -18,7 +18,7 @@
     <pre><code id="code" v-bind:class="langClass">{{code}}</code></pre>
     <textarea id="codeBox" contenteditable="true">{{langName}}
 {{code}}</textarea>
-    <div class="description" contenteditable="true">{{desc}}</div>
+    <div class="description" contenteditable="true" id="desc">{{desc}}</div>
     <ul class="date">
     <li>
     <div class="week">Mon</div>
