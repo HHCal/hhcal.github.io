@@ -70,6 +70,15 @@
 var prism = document.createElement('script');
 prism.src = 'js/prism.js';
 document.body.appendChild(prism);
+
+function updateScale() {
+    var height = document.body.clientHeight - 40;
+    var scale = height / 528;
+    document.getElementById('page').style.transform = 'scale(' + scale + ')';
+}
+
+updateScale();
+window.onresize = updateScale;
 </script>
 </body>
 </html>

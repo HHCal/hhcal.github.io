@@ -62,5 +62,15 @@
     </div>
 </div>
 <script src="../js/share.js"></script>
+<script>
+function updateScale() {
+    var height = document.body.clientHeight - 40;
+    var scale = height / 528;
+    document.getElementById('page').style.transform = 'scale(' + scale + ')';
+}
+
+updateScale();
+window.onresize = updateScale;
+</script>
 </body>
 </html>
