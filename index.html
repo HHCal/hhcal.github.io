@@ -72,8 +72,8 @@ prism.src = 'js/prism.js';
 document.body.appendChild(prism);
 
 function updateScale() {
-    var height = document.body.clientHeight - 100;
-    var width = document.body.clientWidth - 60;
+    var height = window.innerHeight - 100;
+    var width = window.innerWidth - 60;
     var scale = Math.min(height / 528, width / 400);
     document.getElementById('page').style.transform = 'scale(' + scale + ')';
 }
