@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+<meta charset="utf-8">
 <title>Happy Hacking Calendar</title>
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/atom-one-light.min.css">
@@ -13,54 +14,55 @@
 <div v-cloak id="page" class="page share">
     <a href="/"><div class="title">Happy Hacking<br>2018</div></a>
     <h1><div>{{lang}}</div></h1>
-    <div class="main-date">2018-01-01</div>
+    <div class="main-date">2018-{{dates[0].d}}</div>
     <div class="meta">
     <span class="main-week">Mon</span>
-    <span class="main-lunar red">元旦</span>
+    <span v-bind:class="{'main-lunar': true, red: dates[0].r}">{{dates[0].l}}</span>
     </div>
     <pre><code id="code" v-bind:class="langClass">{{code}}</code></pre>
     <div class="description">{{desc}}</div>
     <ul class="date">
     <li>
     <div class="week">Mon</div>
-    <div class="date">01-01</div>
-    <div class="lunar red">元旦</div>
+    <div class="date">{{dates[0].d}}</div>
+    <div v-bind:class="{lunar: true, red: dates[0].r}">{{dates[0].l}}</div>
     </li>
     <li>
     <div class="week">Tue</div>
-    <div class="date">01-02</div>
-    <div class="lunar">十六</div>
+    <div class="date">{{dates[1].d}}</div>
+    <div v-bind:class="{lunar: true, red: dates[1].r}">{{dates[1].l}}</div>
     </li>
     <li>
     <div class="week">Wed</div>
-    <div class="date">01-03</div>
-    <div class="lunar">十七</div>
+    <div class="date">{{dates[2].d}}</div>
+    <div v-bind:class="{lunar: true, red: dates[2].r}">{{dates[2].l}}</div>
     </li>
     <li>
     <div class="week">Thu</div>
-    <div class="date">01-04</div>
-    <div class="lunar">十八</div>
+    <div class="date">{{dates[3].d}}</div>
+    <div v-bind:class="{lunar: true, red: dates[3].r}">{{dates[3].l}}</div>
     </li>
     <li>
     <div class="week">Fri</div>
-    <div class="date">01-05</div>
-    <div class="lunar red">小寒</div>
+    <div class="date">{{dates[4].d}}</div>
+    <div v-bind:class="{lunar: true, red: dates[4].r}">{{dates[4].l}}</div>
     </li>
     <li>
     <div class="week red">Sat</div>
-    <div class="date">01-06</div>
-    <div class="lunar">二十</div>
+    <div class="date">{{dates[5].d}}</div>
+    <div v-bind:class="{lunar: true, red: dates[5].r}">{{dates[5].l}}</div>
     </li>
     <li>
     <div class="week red">Sun</div>
-    <div class="date">01-07</div>
-    <div class="lunar">廿一</div>
+    <div class="date">{{dates[6].d}}</div>
+    <div v-bind:class="{lunar: true, red: dates[6].r}">{{dates[6].l}}</div>
     </li>
     </ul>
     <div class="qr">
         <a href="https://weidian.com/item.html?itemID=2229884530"><img src="../images/qr.png"></a>
     </div>
 </div>
+<script src="../js/date.js"></script>
 <script src="../js/share.js"></script>
 <script>
 function updateScale() {
