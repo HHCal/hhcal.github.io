@@ -275,12 +275,15 @@ select.lang-name {
 }
 
 .preview #lang,
-.preview .description {
+.preview .description,
+.share #lang,
+.share .description {
     box-shadow: none;
     padding: 0;
 }
 
-.preview pre {
+.preview pre,
+.share pre {
     display: block;
 }
 
