@@ -10,7 +10,7 @@
 </head>
 <body>
 <div v-cloak id="page" v-bind:class="pageClass" v-on:mouseleave="updateCode()">
-    <h1><div contenteditable="true" id="lang">{{lang}}</div></h1>
+    <h1><div v-bind:contenteditable="!pageClass.preview" id="lang">{{lang}}</div></h1>
     <label id="highlight-label" for="highlight">Highlight:</label>
     <select id="highlight" class="lang-name" v-model="langName">
         <option value="markup">Markup</option>
@@ -152,8 +152,8 @@
     <span v-bind:class="{'main-lunar': true, red: dates[0].r}">{{dates[0].l}}</span>
     </div>
     <pre id="pre"><code id="code" v-bind:class="langClass">{{code}}</code></pre>
-    <textarea id="codeBox" contenteditable="true" v-model="code"></textarea>
-    <div class="description" contenteditable="true" id="desc">{{desc}}</div>
+    <textarea id="codeBox" v-model="code"></textarea>
+    <div class="description" v-bind:contenteditable="!pageClass.preview" id="desc">{{desc}}</div>
     <ul class="date">
     <li>
     <div class="week">Mon</div>
