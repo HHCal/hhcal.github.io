@@ -70,10 +70,6 @@ body {
     margin: 0;
 }
 
-.page:not(.share):hover h1 {
-    background: #eee;
-}
-
 .page .main-date {
     position: absolute;
     top: 144px;
@@ -111,9 +107,6 @@ body {
     margin: .5em 0;
     overflow: auto;
     position: relative;
-}
-
-.page:not(.share):hover pre {
     display: none;
 }
 
@@ -123,16 +116,13 @@ body {
     border: none;
     margin-top: 48px;
     margin-left: 24px;
-    background: #eee;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     line-height: 1.4em!important;
     font-size: 6px;
     resize: none;
-    display: none;
-}
-
-.page:hover #codeBox {
-    display: block;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.15) inset;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .page .description {
@@ -145,10 +135,6 @@ body {
     hyphens: auto;
     font-size: 0.8em;
     font-family: 'Noto Sans SC Sliced', Arial;
-}
-
-.page:not(.share):hover .description {
-    background: #eee;
 }
 
 .page ul.date {
@@ -209,21 +195,26 @@ body {
 
 #form {
     position: absolute;
-    top: 10px;
+    top: 32px;
     left: 0;
     text-align: right;
     width: 100%;
-    padding-right: 10px;
+    padding-right: 32px;
     box-sizing: border-box;
 }
 
 #form button {
     border: none;
-    background: black;
+    background: gray;
     color: white;
-    width: 50px;
     height: 25px;
+    width: 60px;
     cursor: pointer;
+    outline: none;
+}
+
+#form button:hover {
+    background: #ccc;
 }
 
 .title {
@@ -255,4 +246,46 @@ body {
 
 .qr a {
     outline: none;
+}
+
+select.lang-name {
+    position: absolute;
+    background: white;
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    top: 166px;
+    left: 110px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.15) inset;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 6px;
+}
+
+#highlight-label {
+    position: absolute;
+    top: 168px;
+    left: 56px;
+}
+
+#lang, .description {
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.15) inset;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.preview #lang,
+.preview .description {
+    box-shadow: none;
+    padding: 0;
+}
+
+.preview pre {
+    display: block;
+}
+
+.preview .lang-name,
+.preview #codeBox,
+.preview #highlight-label {
+    display: none;
 }

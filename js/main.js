@@ -1,6 +1,10 @@
 var app = new Vue({
     el: '#page',
     data: {
+        pageClass: {
+            page: true,
+            preview: false
+        },
         lang: 'Java',
         langClass: {'language-java': true},
         langName: 'java',
@@ -18,19 +22,18 @@ public class HackingDate {
         updateCode: function() {
             this.lang = document.getElementById('lang').innerText;
             this.desc = document.getElementById('desc').innerText;
+            
+            document.getElementById('pre').className = `language-${this.langName}`;
+            document.getElementById('code').className = `language-${this.langName}`;
+            document.getElementById('code').innerHTML = this.code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-            var code = document.getElementById('codeBox').value;
-
-            var newLine = code.indexOf('\n');
-            this.langName = code.substr(0, newLine);
-            this.code = code.substr(newLine + 1);
-            document.getElementById('code').innerHTML = this.code;
             var prism = document.createElement('script');
             prism.src = 'js/prism.js';
             document.body.appendChild(prism);
         },
-        share: function() {
-
+        preview: function() {
+            this.updateCode();
+            this.pageClass.preview = !this.pageClass.preview;
         }
     }
 });

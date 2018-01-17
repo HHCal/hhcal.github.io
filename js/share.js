@@ -13,7 +13,7 @@ tableService.queryEntities('hhcal', tableQuery, null, function(error, results) {
             data: {
                 lang: decodeURIComponent(results.entries[0].title._.replace(/\+/g, ' ')),
                 langClass: {},
-                code: decodeURIComponent(results.entries[0].code._.replace(/\+/g, ' ')),
+                code: decodeURIComponent(results.entries[0].code._.replace(/\+/g, ' ')).replace(/</g, '&lt;').replace(/>/g, '&gt;'),
                 desc: decodeURIComponent(results.entries[0].desc._.replace(/\+/g, ' '))
             },
             mounted: function() {
