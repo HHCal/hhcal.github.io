@@ -152,7 +152,7 @@
     <span v-bind:class="{'main-lunar': true, red: dates[0].r}">{{dates[0].l}}</span>
     </div>
     <pre id="pre"><code id="code" v-bind:class="langClass">{{code}}</code></pre>
-    <textarea id="codeBox" v-model="code"></textarea>
+    <textarea id="codeBox" v-model="code" spellcheck="false"></textarea>
     <div class="description" v-bind:contenteditable="!pageClass.preview" id="desc">{{desc}}</div>
     <ul class="date">
     <li>
