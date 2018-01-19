@@ -262,6 +262,10 @@ select.lang-name {
     font-size: 6px;
 }
 
+select.lang-name optgroup {
+    font-size: 12px;
+}
+
 #highlight-label {
     position: absolute;
     top: 168px;
